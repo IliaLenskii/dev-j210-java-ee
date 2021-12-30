@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://127.0.0.1:8080/NewWebService/NewWebService?WSDL" uri="wsdl/127.0.0.1_8080/NewWebService/NewWebService.wsdl"/>
+    <system systemId="http://127.0.0.1:8080/NewWebService/NewWebService?xsd=1" uri="wsdl/127.0.0.1_8080/NewWebService/NewWebService.xsd_1.xsd"/>
+    <system systemId="http://127.0.0.1:8080/DemoNewWebService/NewWebService?WSDL" uri="wsdl/127.0.0.1_8080/DemoNewWebService/NewWebService.wsdl"/>
+    <system systemId="http://127.0.0.1:8080/DemoNewWebService/NewWebService?xsd=1" uri="wsdl/127.0.0.1_8080/DemoNewWebService/NewWebService.xsd_1.xsd"/>
+</catalog>

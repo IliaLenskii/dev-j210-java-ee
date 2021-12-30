@@ -76,10 +76,10 @@
         <div class="message-block"></div>
 
         <form class="form-select-button" action="index-request" method="post" autocomplete="false" enctype="multipart/form-data">
-            <input type="text" name="user" maxlength="150" placeholder="User is..." value="u1">
+            <input type="text" name="user" maxlength="150" placeholder="User is..." value="user1">
             <br />
             <br />
-            <input type="text" name="msg" maxlength="150" placeholder="Msg is..." value="asdf aksdfj lskdfjskdj">
+            <input type="text" name="msg" maxlength="150" placeholder="Msg is..." value="Протечка водоблока на видеокарту RTX 3090 Inno3D">
             <br />
             <br />
             <button type="submit">Send</button>

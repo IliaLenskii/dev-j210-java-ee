@@ -17,7 +17,7 @@ import javax.jws.WebParam;
  *
  * @author il.lenskii
  */
-@WebService(serviceName = "NewWebService")
+@WebService(serviceName = "DemoNewWebService")
 @Stateless()
 public class NewWebService implements IDemo {
 

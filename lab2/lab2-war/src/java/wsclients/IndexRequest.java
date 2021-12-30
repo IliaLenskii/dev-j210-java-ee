@@ -8,9 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.WebServiceRef;
 
-//import javax.xml.ws.WebServiceRef;
-//import ru.spbstu.hse.j210.NewWebService;
 
 /**
  *
@@ -19,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "IndexRequest", urlPatterns = {"/index-request"})
 @MultipartConfig
 public class IndexRequest extends HttpServlet {
-    
-    //@WebServiceRef
-    //private NewWebService ws;
+
+    @WebServiceRef /*(wsdlLocation="http://127.0.0.1:8080/DemoNewWebService/NewWebService?WSDL")*/
+    private DemoNewWebService dWSer;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +35,7 @@ public class IndexRequest extends HttpServlet {
             throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
-        
+
         boolean isPost = "POST".equals(request.getMethod());
         String mainPage = request.getContextPath();
         
@@ -48,8 +47,23 @@ public class IndexRequest extends HttpServlet {
 
         String postUser = request.getParameter("user");
         String postMsg = request.getParameter("msg");
-        
-        System.out.println(">> "+ postUser +" __ "+ postMsg);
+
+        if(dWSer != null) {
+            
+            try {
+                
+                NewWebService ws = dWSer.getNewWebServicePort();
+            
+                ws.add(postUser, postMsg);
+                
+                
+                System.out.println( ws.getAllMessage(postUser) );
+                
+            } catch(Exception ex) {
+                
+                System.out.println(ex.getMessage());
+            }
+        }
 
         response.sendRedirect( mainPage );
     }
