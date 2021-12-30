@@ -19,7 +19,7 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "NewWebService")
 @Stateless()
-public class NewWebService {
+public class NewWebService implements IDemo {
 
     @EJB
     private UsersMesagesSessionBean ejbRef;
@@ -29,15 +29,15 @@ public class NewWebService {
 
         return ejbRef.getMessage(user, index);
     }
-
-    @WebMethod(operationName = "addMessage")
-    public boolean addMessage(@WebParam(name = "user") String user, @WebParam(name = "message") String message) {
+    
+    @WebMethod(operationName = "add")
+    public boolean add(@WebParam(name = "user") String user, @WebParam(name = "message") String message) {
 
         return ejbRef.addMessage(user, message);
     }
 
-    @WebMethod(operationName = "getMessageList")
-    public List<String> getMessageList(@WebParam(name = "user") String user) {
+    @WebMethod(operationName = "getAllMessage")
+    public List<String> getAllMessage(@WebParam(name = "user") String user) {
 
         return ejbRef.getMessageList(user);
     }
